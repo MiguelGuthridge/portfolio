@@ -1,15 +1,17 @@
 import Head from "next/head";
 import { Project, getProjectDetails, getProjects } from "@/lib/projects";
+import Link from "next/link";
 
 export default function ProjectPage(p: Project) {
   return (
     <>
       <Head>
-        <title>{p.name} | Miguel Guthridge</title>
+        <title>{`${p.name} | Miguel Guthridge`}</title>
         <meta name="description" content="Miguel Guthridge's homepage" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Link href="/projects">Back</Link>
       <h1>{p.name}</h1>
       <p>{p.description}</p>
       <ul>
@@ -21,6 +23,13 @@ export default function ProjectPage(p: Project) {
         {
           p.repo
             ? <li><a href={p.repo} target="_blank">View the code</a></li>
+            : <></>
+        }
+        {
+          p.package
+            ? <li>
+              <a href={p.package.url} target="_blank">Install the project</a>
+            </li>
             : <></>
         }
       </ul>
