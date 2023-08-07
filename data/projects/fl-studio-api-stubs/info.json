@@ -1,4 +1,5 @@
 {
+  "$schema": "../project.schema.json",
   "name": "FL Studio API Stubs",
   "description": "Type definitions, and full documentation for FL Studio's MIDI Controller Scripting API",
   "status": "Active",

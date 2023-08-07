@@ -1,4 +1,5 @@
 {
+  "$schema": "../project.schema.json",
   "name": "Waydriver",
   "description": "An advanced task management system",
   "status": "In-progress",

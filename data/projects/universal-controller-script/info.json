@@ -1,4 +1,5 @@
 {
+  "$schema": "../project.schema.json",
   "name": "Universal Controller Script",
   "description": "An advanced compatibility layer to provide best-in-class integration between numerous hardware MIDI controllers and FL Studio",
   "status": "Active",

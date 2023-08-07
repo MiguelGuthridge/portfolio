@@ -1,4 +1,5 @@
 {
+  "$schema": "../project.schema.json",
   "name": "Equator",
   "description": "A symbolic math interpreter built using Sympy",
   "status": "Complete",

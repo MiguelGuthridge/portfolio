@@ -10,11 +10,11 @@ Basic information about the project.
 * `description` (`string`): short description of the project
 * `status` (`string`): status of the project (see
   [`status.json`](./status.json))
-* `repo` (`string?`): Repository where the project's source code can be found
-* `site` (`string?`): Website where the project is hosted
 * `languages` (`string[]`): programming languages used by the project
 * `frameworks` (`string[]`): frameworks used by the project
 * `skills` (`string[]`): skills demonstrated by the project
+* `repo` (`string?`): Repository where the project's source code can be found
+* `site` (`string?`): Website where the project is hosted
 
 ### `package` (`object?`)
 
