@@ -1,0 +1,12 @@
+{
+  "name": "Jestspectation",
+  "description": "A powerful pattern matching system inspired by the Jest framework",
+  "status": "Active",
+  "repo": "https://github.com/MiguelGuthridge/Jestspectation",
+  "languages": ["python"],
+  "frameworks": ["pytest"],
+  "package": {
+    "url": "https://pypi.org/project/jestspectation/",
+    "command": "pip install jestspectation"
+  }
+}

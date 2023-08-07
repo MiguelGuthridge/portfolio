@@ -1,0 +1,14 @@
+{
+  "name": "Waydriver",
+  "description": "An advanced task management system",
+  "status": "In-progress",
+  "repo": "https://github.com/Waydriver",
+  "languages": ["typescript"],
+  "frameworks": [
+    "express",
+    "next"
+  ],
+  "skills": [
+    "fullstack"
+  ]
+}

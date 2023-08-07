@@ -1,0 +1,10 @@
+{
+  "name": "Unnamed Chess AI",
+  "description": "A currently-incomplete chess engine written in Rust",
+  "repo": "https://github.com/MiguelGuthridge/chs",
+  "languages": "rust",
+  "frameworks": [],
+  "skills": [
+    "type-safety"
+  ]
+}

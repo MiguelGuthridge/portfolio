@@ -1,0 +1,11 @@
+{
+  "name": "Universal Controller Script",
+  "description": "An advanced compatibility layer to provide best-in-class integration between numerous hardware MIDI controllers and FL Studio",
+  "status": "Active",
+  "repo": "https://github.com/MiguelGuthridge/Universal-Controller-Script",
+  "languages": ["python"],
+  "frameworks": ["fl-studio-midi-controller-scripting"],
+  "skills": [
+    "type-safety"
+  ]
+}

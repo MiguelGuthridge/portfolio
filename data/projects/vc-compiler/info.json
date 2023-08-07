@@ -1,0 +1,11 @@
+{
+  "name": "VC Compiler",
+  "description": "A compiler written in Java that converts a C-like language into Java Bytecode",
+  "status": "Complete",
+  "languages": ["java", "jasmin"],
+  "frameworks": [],
+  "skills": [
+    "static-analysis",
+    "compilers"
+  ]
+}
