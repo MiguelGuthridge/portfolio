@@ -45,11 +45,13 @@
     },
     "repo": {
       "description": "The repository where the project source code can be found",
-      "type": "string"
+      "type": "string",
+      "format": "uri"
     },
     "site": {
       "description": "The URL of the website where the project is hosted",
-      "type": "string"
+      "type": "string",
+      "format": "uri"
     },
     "package": {
       "description": "The package from which the project can be installed",
@@ -57,7 +59,12 @@
       "properties": {
         "command": {
           "description": "The command to use when installing the package",
-          "url": "The URL to find the project on the package management website"
+          "type": "string"
+        },
+        "url": {
+          "description": "The URL to find the project on the package management website",
+          "type": "string",
+          "format": "uri"
         }
       }
     }

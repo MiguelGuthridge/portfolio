@@ -3,7 +3,7 @@ import { getProjects, Project } from "@/lib/projects";
 import Head from "next/head";
 import Link from "next/link";
 
-export default function Projects(props: Record<string, Project>) {
+export default function Projects(props: { projects: Project[] }) {
   return (
     <>
       <Head>
@@ -14,11 +14,11 @@ export default function Projects(props: Record<string, Project>) {
       </Head>
       <main>
         <h1>My projects</h1>
-        {Object.entries(props).map(([id, project]) => (
-          <div key={id}>
+        {props.projects.map((project) => (
+          <div key={project.id}>
             <h2>{project.name}</h2>
             <p>{project.description}</p>
-            <Link href={`/projects/${id}`}>View project</Link>
+            <Link href={`/projects/${project.id}`}>View project</Link>
           </div>
         ))
         }
@@ -29,6 +29,6 @@ export default function Projects(props: Record<string, Project>) {
 
 export async function getStaticProps() {
   return {
-    props: await getProjects(),
+    props: { projects: await getProjects() },
   };
 }

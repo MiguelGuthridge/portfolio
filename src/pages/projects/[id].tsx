@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Project, getProjects } from "@/lib/projects";
+import { Project, getProjectDetails, getProjects } from "@/lib/projects";
 
 export default function ProjectPage(p: Project) {
   return (
@@ -14,8 +14,8 @@ export default function ProjectPage(p: Project) {
       <p>{p.description}</p>
       <ul>
         {
-          p.url
-            ? <li><a href={p.url} target="_blank">Visit this project</a></li>
+          p.site
+            ? <li><a href={p.site} target="_blank">Visit this project</a></li>
             : <></>
         }
         {
@@ -31,16 +31,15 @@ export default function ProjectPage(p: Project) {
 export async function getStaticProps(
   { params }: { params: { id: string } }
 ) {
-  const projects = await getProjects();
   return {
-    props: projects[params.id],
+    props: await getProjectDetails(params.id),
   };
 }
 
 export async function getStaticPaths() {
   const projects = await getProjects();
-  const paths = Object.keys(projects).map(id => {
-    return { params: { id } };
+  const paths = projects.map(project => {
+    return { params: { id: project.id } };
   });
 
   return {
