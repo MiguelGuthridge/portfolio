@@ -1,7 +1,7 @@
 {
   "$schema": "../project.schema.json",
   "name": "Jestspectation",
-  "description": "A powerful pattern matching system inspired by the Jest framework",
+  "description": "A pattern matching system to make clear and reliable test cases",
   "status": "Active",
   "repo": "https://github.com/MiguelGuthridge/Jestspectation",
   "languages": ["python"],
