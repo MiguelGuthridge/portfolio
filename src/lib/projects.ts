@@ -16,7 +16,7 @@ export type Project = {
   // Added by getProjectDetails
   id: string
 
-  // properties from schema
+  // properties from info.json
   name: string
   description: string
   status: ProjectStatus
@@ -29,6 +29,9 @@ export type Project = {
     command: string
     url: string
   }
+
+  // Properties from other files
+  fullDescription: string
 }
 
 /**
@@ -52,6 +55,20 @@ export async function getProjects(): Promise<Project[]> {
 }
 
 /**
+ * Load the full description of the project from `description.md`
+ */
+export async function getProjectFullDescription(name: string): Promise<string> {
+  if (!projectExists(name)) {
+    throw new Error(`Project '${name}' does not exist`);
+  }
+
+  return fs.readFile(
+    path.join(BASE_DIR, name, 'description.md'),
+    { encoding: 'utf-8' }
+  );
+}
+
+/**
  * Load and validate details about a single project
  */
 export async function getProjectDetails(name: string): Promise<Project> {
@@ -69,6 +86,7 @@ export async function getProjectDetails(name: string): Promise<Project> {
   // Add the id property
   const project = {
     id: name,
+    fullDescription: await getProjectFullDescription(name),
     ...projectData,
   } as Project;
 
@@ -97,6 +115,11 @@ export async function getProjectDetails(name: string): Promise<Project> {
     if (!skillExists(skill)) {
       errors.push(`Skill '${skill}' does not have a definition`);
     }
+  }
+
+  if (errors.length) {
+    const errorsSummary = errors.reduce((p, c) => `${p}\n${c}`, '');
+    throw new Error(`Project '${name}' failed validation. ${errorsSummary}`)
   }
 
   return project;

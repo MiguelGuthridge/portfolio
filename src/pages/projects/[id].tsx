@@ -13,7 +13,7 @@ export default function ProjectPage(p: Project) {
       </Head>
       <Link href="/projects">Back</Link>
       <h1>{p.name}</h1>
-      <p>{p.description}</p>
+      <p>{p.fullDescription}</p>
       <ul>
         {
           p.site
