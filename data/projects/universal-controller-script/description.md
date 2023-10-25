@@ -7,5 +7,6 @@ hardware in a generic manner, as well as a powerful plugin integration system
 which adaptively maps the controls many software instruments and effects to
 hardware controls in an intuitive and consistent manner.
 
-After over 2 years of design and development, there are now over 250 people who
-use Universal Controller Script to streamline their music production workflow.
+After over 2 years of design and development, there are now
+*over 250 musicians* who use Universal Controller Script to streamline their
+music production workflow.
