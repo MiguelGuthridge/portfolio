@@ -57,7 +57,9 @@ export async function getProjects(): Promise<Project[]> {
 /**
  * Load the full description of the project from `description.md`
  */
-export async function getProjectFullDescription(name: string): Promise<string> {
+export async function getProjectFullDescription(
+  name: string
+): Promise<string> {
   if (!projectExists(name)) {
     throw new Error(`Project '${name}' does not exist`);
   }
@@ -119,7 +121,7 @@ export async function getProjectDetails(name: string): Promise<Project> {
 
   if (errors.length) {
     const errorsSummary = errors.reduce((p, c) => `${p}\n${c}`, '');
-    throw new Error(`Project '${name}' failed validation. ${errorsSummary}`)
+    throw new Error(`Project '${name}' failed validation. ${errorsSummary}`);
   }
 
   return project;
