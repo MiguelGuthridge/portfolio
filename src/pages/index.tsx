@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
+import { Typography } from '@mui/material';
 // import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] });
@@ -16,33 +17,22 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Hello world!</h1>
-        <h2>I&apos;m Miguel</h2>
-        <p>
-          This is my personal website, where I&apos;ll eventually have cool
-          things like show off my projects and stuff.
-        </p>
-        <p>
+        <Typography variant='h1'>Hello world!</Typography>
+        <Typography variant='h2'>I&apos;m Miguel</Typography>
+        <Typography>
+          This is my portfolio, I showcase my best projects.
+        </Typography>
+        <Typography>
           It&apos;s pretty bare-bones for now, but I&apos;ll be fleshing it out
-          as I learn more web frontend!
-        </p>
+          over time!
+        </Typography>
         <ul>
-          <li><Link href='/projects'>My projects</Link></li>
+          <li><Link href='/projects'>View my projects</Link></li>
           <li><a
-            href="https://github.com/MiguelGuthridge"
+            href="https://miguelguthridge.com"
             target='_blank'
-          >GitHub/MiguelGuthridge</a></li>
-          <li><a
-            href="https://www.linkedin.com/in/miguelguthridge/"
-            target='_blank'
-          >LinkedIn/in/MiguelGuthridge</a></li>
+          >My main website</a></li>
         </ul>
-        <Image
-          src='/profile.jpg'
-          alt='A photo of me'
-          width={406}
-          height={541}  // FIXME: Need a better way to specify this
-        />
       </main>
     </>
   );
