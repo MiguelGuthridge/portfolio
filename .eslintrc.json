@@ -2,7 +2,7 @@
   "extends": "next/core-web-vitals",
   "rules": {
     "indent": ["error", 2],
-    "max-len": ["error", 79],
+    "max-len": ["error", 79, { "ignoreUrls": true }],
     "no-trailing-spaces": "error",
     "semi": ["error", "always"]
   }
