@@ -1,7 +1,7 @@
 
+import ProjectCard from "@/components/ProjectCard";
 import { getProjects, Project } from "@/lib/projects";
 import Head from "next/head";
-import Link from "next/link";
 
 export default function Projects(props: { projects: Project[] }) {
   return (
@@ -15,11 +15,7 @@ export default function Projects(props: { projects: Project[] }) {
       <main>
         <h1>My projects</h1>
         {props.projects.map((project) => (
-          <div key={project.id}>
-            <h2>{project.name}</h2>
-            <p>{project.description}</p>
-            <Link href={`/projects/${project.id}`}>View project</Link>
-          </div>
+          <ProjectCard key={project.id} project={project} />
         ))
         }
       </main>
