@@ -3,6 +3,6 @@ import fs from 'fs/promises';
 import path from 'path';
 import { generateExistsChecker } from './helpers';
 
-const BASE_DIR = './data/skills';
+const BASE_DIR = './public/data/skills';
 
 export const skillExists = generateExistsChecker(BASE_DIR);

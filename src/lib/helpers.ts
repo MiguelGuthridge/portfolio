@@ -24,11 +24,16 @@ export function generateExistsChecker(
 /**
  * Return a path if it points to a valid file, otherwise return `undefined`
  */
-export async function pathIfExists(path: string): Promise<string | null> {
+export async function serverPathIfExists(
+  path: string
+): Promise<string | null> {
+  if (!path.startsWith('public/')) {
+    throw new Error(`Path '${path}' isn't in the public folder`);
+  }
   try {
     const stats = await fs.stat(path);
     if (stats.isFile()) {
-      return path;
+      return path.replace('public/', '/');
     } else {
       return null;
     }

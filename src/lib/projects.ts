@@ -1,12 +1,12 @@
 
 import fs from 'fs/promises';
 import path from 'path';
-import { generateExistsChecker, pathIfExists } from './helpers';
+import { generateExistsChecker, serverPathIfExists } from './helpers';
 import { languageExists } from './languages';
 import { frameworkExists } from './frameworks';
 import { skillExists } from './skills';
 
-const BASE_DIR = './data/projects';
+const BASE_DIR = './public/data/projects';
 
 
 type ProjectStatus = "In-progress" | "Active" | "Complete" | "Incomplete";
@@ -92,7 +92,7 @@ export async function getProjectDetails(name: string): Promise<Project> {
   // Add the id property
   const project = {
     id: name,
-    icon: await pathIfExists(path.join(BASE_DIR, name, 'icon.png')),
+    icon: await serverPathIfExists(path.join(BASE_DIR, name, 'icon.png')),
     fullDescription: await getProjectFullDescription(name),
     ...projectData,
   } as Project;

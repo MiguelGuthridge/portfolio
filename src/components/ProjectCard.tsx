@@ -23,8 +23,10 @@ const ProjectCard: React.FC<ProjectCardData> = ({
         {
           project.icon &&
           <Image
-            src={require('./icon.png')}
+            src={project.icon}
             alt=''
+            width={100}
+            height={100}
           />
         }
       </CardMedia>
