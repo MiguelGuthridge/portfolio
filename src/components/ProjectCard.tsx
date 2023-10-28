@@ -3,6 +3,7 @@ import {
   Box,
   Button,
   Card,
+  CardActionArea,
   CardActions,
   CardContent,
   CardMedia,
@@ -19,11 +20,17 @@ export type ProjectCardData = {
 const ProjectCard: React.FC<ProjectCardData> = ({
   project
 }: ProjectCardData) => {
-  return <>
-    <Card sx={{
+  return <Card sx={{
+    maxWidth: '800px',
+  }}>
+    <CardActionArea sx={{
       display: 'flex',
+      justifyContent: 'flex-start',
     }}>
-      <CardMedia>
+      <CardMedia sx={{
+        width: '150px',
+        height: '150px',
+      }}>
         {
           project.icon
             ? <Image
@@ -32,26 +39,18 @@ const ProjectCard: React.FC<ProjectCardData> = ({
               width={150}
               height={150}
             />
-            : <PaletteIcon />
+            : <PaletteIcon sx={{
+              width: '150px',
+              height: '150px',
+            }} />
         }
       </CardMedia>
-      <Box>
-        <CardContent>
-          <Typography variant="h3">{project.name}</Typography>
-          <Typography>{project.description}</Typography>
-        </CardContent>
-        <CardActions>
-          <Button
-            size="small"
-            component={Link}
-            href={`/projects/${project.id}`}
-          >
-            View project
-          </Button>
-        </CardActions>
-      </Box>
-    </Card>
-  </>;
+      <CardContent>
+        <Typography variant="h3">{project.name}</Typography>
+        <Typography>{project.description}</Typography>
+      </CardContent>
+    </CardActionArea>
+  </Card>;
 };
 
 export default ProjectCard;
