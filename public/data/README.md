@@ -1,6 +1,9 @@
 # Data
 
-This directory contains the data used to generate the site.
+This directory contains the data used to generate the site. It's in the public
+directory so that the images can be delivered at runtime and stuff. That's
+kinda yucky but the alternative is to have a separate server for them which is
+even more yucky.
 
 * [`projects/`](./projects/): projects I have created or significantly
   contributed to.
