@@ -1,14 +1,8 @@
 import { Project } from "@/lib/projects";
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
+import { Typography } from "@mui/material";
 import Image from "next/image";
-import Link from "next/link";
 import PaletteIcon from '@mui/icons-material/Palette';
+import LinkCard from "./LinkCard";
 
 export type ProjectCardData = {
   project: Project
@@ -17,41 +11,25 @@ export type ProjectCardData = {
 const ProjectCard: React.FC<ProjectCardData> = ({
   project
 }: ProjectCardData) => {
-  return <Card sx={{
-    maxWidth: '800px',
-  }}>
-    <CardActionArea
-      sx={{
-        display: 'flex',
-        justifyContent: 'flex-start',
-      }}
-      href={`/projects/${project.id}`}
-      LinkComponent={Link}
-    >
-      <CardMedia sx={{
-        width: '150px',
-        height: '150px',
-      }}>
-        {
-          project.icon
-            ? <Image
-              src={project.icon}
-              alt=''
-              width={150}
-              height={150}
-            />
-            : <PaletteIcon sx={{
-              width: '150px',
-              height: '150px',
-            }} />
-        }
-      </CardMedia>
-      <CardContent>
-        <Typography variant="h3">{project.name}</Typography>
-        <Typography>{project.description}</Typography>
-      </CardContent>
-    </CardActionArea>
-  </Card>;
+  return <LinkCard
+    path={`/projects/${project.id}`}
+    image={
+      project.icon
+        ? <Image
+          src={project.icon}
+          alt=''
+          width={150}
+          height={150}
+        />
+        : <PaletteIcon sx={{
+          width: '150px',
+          height: '150px',
+        }} />
+    }
+  >
+    <Typography variant="h3">{project.name}</Typography>
+    <Typography>{project.description}</Typography>
+  </LinkCard>;
 };
 
 export default ProjectCard;

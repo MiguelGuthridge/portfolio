@@ -5,6 +5,8 @@ import Markdown from "@/components/Markdown";
 import { Typography } from "@mui/material";
 import RepoCard from "@/components/cards/RepoCard";
 import PackageCard from "@/components/cards/PackageCard";
+import DocsCard from "@/components/cards/DocsCard";
+import SiteCard from "@/components/cards/SiteCard";
 
 export default function ProjectPage(p: Project) {
   return (
@@ -20,13 +22,14 @@ export default function ProjectPage(p: Project) {
       <Markdown>
         {p.fullDescription}
       </Markdown>
-      <ul>
-        {
-          p.site
-            ? <li><a href={p.site} target="_blank">Visit this project</a></li>
-            : <></>
-        }
-      </ul>
+      {
+        p.site
+          && <SiteCard url={p.site} />
+      }
+      {
+        p.docs
+          && <DocsCard url={p.docs} />
+      }
       {
         p.repo
           && <RepoCard repo={p.repo} />

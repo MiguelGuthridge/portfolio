@@ -4,7 +4,7 @@
   "description": "Type definitions, and full documentation for FL Studio's MIDI Controller Scripting API",
   "status": "Active",
   "repo": "https://github.com/MiguelGuthridge/FL-Studio-API-Stubs",
-  "site": "https://miguelguthridge.github.io/FL-Studio-API-Stubs/",
+  "docs": "https://miguelguthridge.github.io/FL-Studio-API-Stubs/",
   "languages": ["python"],
   "frameworks": [
     "fl-studio-midi-controller-scripting",
