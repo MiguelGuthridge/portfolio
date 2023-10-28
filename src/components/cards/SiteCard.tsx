@@ -1,4 +1,4 @@
-import { Button, Card, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import LanguageIcon from '@mui/icons-material/Language';
 import { FunctionComponent } from "react";
 import LinkCard from "./LinkCard";
