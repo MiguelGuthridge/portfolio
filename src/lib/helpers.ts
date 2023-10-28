@@ -20,3 +20,19 @@ export function generateExistsChecker(
     }
   };
 }
+
+/**
+ * Return a path if it points to a valid file, otherwise return `undefined`
+ */
+export async function pathIfExists(path: string): Promise<string | null> {
+  try {
+    const stats = await fs.stat(path);
+    if (stats.isFile()) {
+      return path;
+    } else {
+      return null;
+    }
+  } catch {
+    return null;
+  }
+}

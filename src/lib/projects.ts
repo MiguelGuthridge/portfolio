@@ -1,7 +1,7 @@
 
 import fs from 'fs/promises';
 import path from 'path';
-import { generateExistsChecker } from './helpers';
+import { generateExistsChecker, pathIfExists } from './helpers';
 import { languageExists } from './languages';
 import { frameworkExists } from './frameworks';
 import { skillExists } from './skills';
@@ -29,6 +29,10 @@ export type Project = {
     command: string
     url: string
   }
+
+  icon: string | null
+
+  banner: string | null
 
   // Properties from other files
   fullDescription: string
@@ -88,6 +92,7 @@ export async function getProjectDetails(name: string): Promise<Project> {
   // Add the id property
   const project = {
     id: name,
+    icon: await pathIfExists(path.join(BASE_DIR, name, 'icon.png')),
     fullDescription: await getProjectFullDescription(name),
     ...projectData,
   } as Project;
