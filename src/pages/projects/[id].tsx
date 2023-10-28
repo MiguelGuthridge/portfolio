@@ -1,6 +1,10 @@
 import Head from "next/head";
 import { Project, getProjectDetails, getProjects } from "@/lib/projects";
 import Link from "next/link";
+import Markdown from "@/components/Markdown";
+import { Typography } from "@mui/material";
+import RepoCard from "@/components/cards/RepoCard";
+import PackageCard from "@/components/cards/PackageCard";
 
 export default function ProjectPage(p: Project) {
   return (
@@ -12,27 +16,25 @@ export default function ProjectPage(p: Project) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Link href="/projects">Back</Link>
-      <h1>{p.name}</h1>
-      <p>{p.fullDescription}</p>
+      <Typography variant="h1">{p.name}</Typography>
+      <Markdown>
+        {p.fullDescription}
+      </Markdown>
       <ul>
         {
           p.site
             ? <li><a href={p.site} target="_blank">Visit this project</a></li>
             : <></>
         }
-        {
-          p.repo
-            ? <li><a href={p.repo} target="_blank">View the code</a></li>
-            : <></>
-        }
-        {
-          p.package
-            ? <li>
-              <a href={p.package.url} target="_blank">Install the project</a>
-            </li>
-            : <></>
-        }
       </ul>
+      {
+        p.repo
+          && <RepoCard repo={p.repo} />
+      }
+      {
+        p.package
+          && <PackageCard {...p.package} />
+      }
     </>
   );
 }

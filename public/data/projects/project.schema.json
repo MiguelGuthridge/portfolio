@@ -53,6 +53,11 @@
       "type": "string",
       "format": "uri"
     },
+    "docs": {
+      "description": "The URL of the website where the documentation is hosted",
+      "type": "string",
+      "format": "uri"
+    },
     "package": {
       "description": "The package from which the project can be installed",
       "type": "object",

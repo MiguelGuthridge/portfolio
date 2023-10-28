@@ -1,5 +1,5 @@
 
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/cards/ProjectCard";
 import { getProjects, Project } from "@/lib/projects";
 import { Grid, Box, Typography } from "@mui/material";
 import Head from "next/head";

@@ -1,10 +1,7 @@
 import { Project } from "@/lib/projects";
 import {
-  Box,
-  Button,
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
   CardMedia,
   Typography,

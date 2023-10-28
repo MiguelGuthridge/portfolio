@@ -25,6 +25,7 @@ export type Project = {
   skills: string[]
   repo?: string
   site?: string
+  docs?: string
   package?: {
     command: string
     url: string
