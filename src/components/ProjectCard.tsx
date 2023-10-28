@@ -23,10 +23,14 @@ const ProjectCard: React.FC<ProjectCardData> = ({
   return <Card sx={{
     maxWidth: '800px',
   }}>
-    <CardActionArea sx={{
-      display: 'flex',
-      justifyContent: 'flex-start',
-    }}>
+    <CardActionArea
+      sx={{
+        display: 'flex',
+        justifyContent: 'flex-start',
+      }}
+      href={`/projects/${project.id}`}
+      LinkComponent={Link}
+    >
       <CardMedia sx={{
         width: '150px',
         height: '150px',
